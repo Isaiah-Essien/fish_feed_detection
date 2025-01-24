@@ -146,7 +146,7 @@ async def predict(file: UploadFile = File(...)):
         percentage_white = round((white_pixels / total_pixels) * 100,2)
 
 
-        return {"Area covered with feed": percentage_white}
+        return {"Area_with_feed": percentage_white}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
