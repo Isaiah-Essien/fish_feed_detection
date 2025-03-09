@@ -144,8 +144,8 @@ async def predict(file: UploadFile = File(...)):
         white_pixels = np.sum(binary_mask == 255)
         total_pixels = binary_mask.size
         percentage_white = round((white_pixels / total_pixels) * 100,2)
-
-
+        percentage_white=percentage_white*0.9
+        
         return {"Area_with_feed": percentage_white}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
